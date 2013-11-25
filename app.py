@@ -16,7 +16,8 @@ def index():
     num += 1
 
     redis.set('visitors', num)
-    return render_template('index.html', number=num)
+    user_agent = request.user_agent
+    return render_template('index.html', number=num, user_agent=user_agent)
 
 if __name__ == '__main__':
     app.debug = True
