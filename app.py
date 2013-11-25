@@ -10,7 +10,7 @@ redis = redis.from_url(REDIS_URL)
 @app.route('/')
 def index():
     visitors = redis.get('visitors')
-    os = redis.get('osdata') ||
+    os = redis.get('osdata')
 
     num = 0 if visitors is None else int(visitors)
     num += 1
